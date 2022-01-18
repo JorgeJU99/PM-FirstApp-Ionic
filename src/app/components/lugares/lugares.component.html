@@ -1,0 +1,27 @@
+<div>
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>lugares</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title> Lugares 🎉</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list *ngFor="let lugar of lugares; let index = index">
+        <ion-item>
+          <ion-avatar slot="start">
+            <ion-img [src]="lugar.imagenURL"></ion-img>
+          </ion-avatar>
+          <ion-label class="ion-label-p"> {{ lugar.nombre }} </ion-label>
+        </ion-item>
+        <hr />
+        <ion-text>Comentarios📩</ion-text>
+        <ion-item *ngFor="let comentario of lugares[index].comentario">
+          <ion-text>{{ comentario }}</ion-text>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+</div>
